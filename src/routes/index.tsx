@@ -14,9 +14,16 @@ import {
   Instagram,
   Music2,
   ArrowDown,
+  Palette,
+  Figma as FigmaIcon,
+  Layers,
+  Grid3x3,
+  AppWindow,
+  LayoutDashboard,
+  Scissors,
 } from "lucide-react";
 
-import heroPortrait from "@/assets/hero-portrait.jpg";
+import heroPortrait from "@/assets/favour.jpg";
 import eyanodWeekend from "@/assets/eyanod-weekend.jpg";
 import eyanodTgif from "@/assets/eyanod-tgif.jpg";
 import eyanodWomen from "@/assets/eyanod-womens-day.jpg";
@@ -24,7 +31,7 @@ import eyanodFathers from "@/assets/eyanod-fathers-day.jpg";
 import eyanodNewWeek from "@/assets/eyanod-newweek.jpg";
 import eyanodDemocracy from "@/assets/eyanod-democracy.jpg";
 import projectOpay from "@/assets/project-opay.jpg";
-import projectDevuno from "@/assets/project-devuno.jpg";
+import projectDevuno from "@/assets/eyanod-tgif.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -54,7 +61,15 @@ const SKILLS = [
   { title: "Productivity", items: ["Microsoft Office", "Google Workspace"] },
 ];
 
-const TOOLS = ["Canva", "Figma", "Photoshop", "Google Workspace", "Microsoft Office", "Meta Business Suite", "CapCut"];
+const TOOLS = [
+  { name: "Canva", icon: Palette },
+  { name: "Figma", icon: FigmaIcon },
+  { name: "Photoshop", icon: Layers },
+  { name: "Google Workspace", icon: Grid3x3 },
+  { name: "Microsoft Office", icon: AppWindow },
+  { name: "Meta Business Suite", icon: LayoutDashboard },
+  { name: "CapCut", icon: Scissors },
+];
 
 const PROJECTS = [
   {
@@ -306,7 +321,8 @@ function Hero() {
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
           <a
-            href="#resume"
+            href="/assets/Odion-Ohitanagbonta-Resume.pdf"
+            download="Odion-Ohitanagbonta-Resume.pdf"
             className="group inline-flex items-center gap-3 border border-foreground/30 px-7 py-4 text-sm uppercase tracking-widest transition-all hover:border-foreground"
           >
             <Download className="h-4 w-4" /> Download Resume
@@ -544,15 +560,15 @@ function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ delay: i * 0.06, duration: 0.6 }}
-                className="group relative aspect-square overflow-hidden border border-border bg-card"
+                className="group relative aspect-[4/5] overflow-hidden border border-border bg-card"
               >
                 <img
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  width={1024}
-                  height={1024}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  width={1120}
+                  height={1400}
+                  className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <span className="absolute bottom-3 left-3 right-3 text-left text-[11px] uppercase tracking-widest text-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -718,15 +734,16 @@ function Tools() {
         <div className="grid grid-cols-2 gap-px overflow-hidden border border-border bg-border sm:grid-cols-3 lg:grid-cols-4">
           {TOOLS.map((t, i) => (
             <motion.div
-              key={t}
+              key={t.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.5 }}
-              className="flex aspect-[3/2] items-center justify-center bg-card p-6 transition-colors hover:bg-secondary"
+              className="group flex aspect-[3/2] flex-col items-center justify-center gap-3 bg-card p-6 transition-colors hover:bg-secondary"
             >
-              <span className="text-center font-display text-xl uppercase text-foreground sm:text-2xl">
-                {t}
+              <t.icon className="h-7 w-7 text-primary transition-transform duration-300 group-hover:-translate-y-0.5 sm:h-8 sm:w-8" />
+              <span className="text-center font-display text-lg uppercase text-foreground sm:text-xl">
+                {t.name}
               </span>
             </motion.div>
           ))}
@@ -807,8 +824,8 @@ function Contact() {
                 Chat on WhatsApp <ArrowUpRight className="h-4 w-4" />
               </a>
               <a
-                href="#resume"
-                id="resume"
+                href="/assets/Odion-Ohitanagbonta-Resume.pdf"
+                download="Odion-Ohitanagbonta-Resume.pdf"
                 className="inline-flex items-center gap-2 border border-foreground/30 px-6 py-3 text-xs uppercase tracking-widest transition-colors hover:border-foreground"
               >
                 <Download className="h-4 w-4" /> Download Resume
