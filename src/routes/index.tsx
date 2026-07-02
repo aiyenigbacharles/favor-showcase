@@ -269,7 +269,7 @@ function Hero() {
           className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground"
         >
           <span className="h-px w-10 bg-primary" />
-          Portfolio — 2025
+          Portfolio — 2026
         </motion.p>
 
         <motion.h1
