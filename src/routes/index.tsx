@@ -31,6 +31,8 @@ import eyanodNewWeek from "@/assets/eyanod-newweek.jpg";
 import eyanodDemocracy from "@/assets/eyanod-democracy.jpg";
 import projectOpay from "@/assets/project-opay.jpg";
 import projectDevuno from "@/assets/eyanod-tgif.jpg";
+import socialAnalyticsInstagram from "@/assets/social-analytics-instagram.jpg";
+import socialAnalyticsTiktok from "@/assets/social-analytics-tiktok.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -50,7 +52,7 @@ const EYANOD_GALLERY = [
   { src: eyanodWomen, alt: "Eyanod International Women's Day poster" },
   { src: eyanodFathers, alt: "Eyanod Happy Father's Day poster" },
   { src: eyanodNewWeek, alt: "Eyanod Happy New Week poster" },
-  { src: eyanodDemocracy, alt: "Eyanod Democracy Day poster" },
+  // { src: eyanodDemocracy, alt: "Eyanod Democracy Day poster" },
 ];
 
 const SKILLS = [
@@ -78,6 +80,15 @@ const PROJECTS = [
       "Educational and engaging social content that simplifies renewable energy concepts through visual storytelling for Eyanod.",
     tools: ["Canva"],
     image: eyanodNewWeek,
+    link: null,
+  },
+  {
+    title: "Democracy Day Campaign",
+    role: "Marketing Lead",
+    description:
+      "A commemorative Democracy Day post for Eyanod, collaging portraits of everyday Nigerians into the shape of the map to tie civic pride to a clear brand message: reliable solar power for homes and businesses nationwide.",
+    tools: ["Canva"],
+    image: eyanodDemocracy,
     link: null,
   },
   {
@@ -726,6 +737,45 @@ function Social() {
             </div>
           </Reveal>
         </div>
+
+        <Reveal delay={0.2} className="mt-14">
+          <p className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            <span className="h-px w-10 bg-primary" />
+            Performance Snapshot
+          </p>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="group overflow-hidden border border-border bg-card p-3 transition-colors hover:border-primary">
+              <div className="overflow-hidden rounded-xl bg-background">
+                <img
+                  src={socialAnalyticsInstagram}
+                  alt="Instagram Insights showing 90-day views and reach across followers and non-followers"
+                  loading="lazy"
+                  width={591}
+                  height={1280}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
+              <p className="mt-3 px-1 text-xs uppercase tracking-widest text-muted-foreground">
+                Instagram Insights
+              </p>
+            </div>
+            <div className="group overflow-hidden border border-border bg-card p-3 transition-colors hover:border-primary">
+              <div className="overflow-hidden rounded-xl bg-background">
+                <img
+                  src={socialAnalyticsTiktok}
+                  alt="TikTok analytics overview showing post views, likes and traffic source breakdown"
+                  loading="lazy"
+                  width={591}
+                  height={1280}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
+              <p className="mt-3 px-1 text-xs uppercase tracking-widest text-muted-foreground">
+                TikTok Analytics
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
