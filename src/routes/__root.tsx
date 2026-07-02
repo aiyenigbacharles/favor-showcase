@@ -77,13 +77,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Odion Ohitanagbonta Favour — Marketing & Design Portfolio" },
-      { name: "description", content: "Portfolio of Odion Ohitanagbonta Favour — Marketing Manager, Content Strategist, Graphic Designer and UI/UX Designer based in Abuja, Nigeria." },
+      { title: "Odion Ohitanagbonta Favour - Marketing & Design Portfolio" },
+      { name: "description", content: "Portfolio of Odion Ohitanagbonta Favour; Marketing Manager, Content Strategist, Graphic Designer and UI/UX Designer based in Abuja, Nigeria." },
       { name: "author", content: "Odion Ohitanagbonta Favour" },
-      { property: "og:title", content: "Odion Ohitanagbonta Favour — Marketing & Design Portfolio" },
-      { property: "og:description", content: "Marketing Manager, Content Strategist, Graphic Designer and UI/UX Designer. Currently Marketing Lead at Eyanod." },
+      { property: "og:title", content: "Odion Ohitanagbonta Favour - Marketing & Design Portfolio" },
+      { property: "og:description", content: "Portfolio of Odion Ohitanagbonta Favour; Marketing Manager, Content Strategist, Graphic Designer and UI/UX Designer based in Abuja, Nigeria." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Odion Ohitanagbonta Favour - Marketing & Design Portfolio" },
+      { name: "twitter:description", content: "Portfolio of Odion Ohitanagbonta Favour; Marketing Manager, Content Strategist, Graphic Designer and UI/UX Designer based in Abuja, Nigeria." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/dc304b33-4391-4a2b-9401-423703ae9b3a" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/dc304b33-4391-4a2b-9401-423703ae9b3a" },
     ],
     links: [
       {
