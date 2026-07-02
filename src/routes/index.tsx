@@ -6,6 +6,7 @@ import {
   Menu,
   X,
   ArrowUpRight,
+  ArrowDown,
   Download,
   Mail,
   Phone,
@@ -13,7 +14,6 @@ import {
   Facebook,
   Instagram,
   Music2,
-  ArrowDown,
   Palette,
   Figma as FigmaIcon,
   Layers,
@@ -22,7 +22,6 @@ import {
   LayoutDashboard,
   Scissors,
 } from "lucide-react";
-
 import heroPortrait from "@/assets/favour.jpg";
 import eyanodWeekend from "@/assets/eyanod-weekend.jpg";
 import eyanodTgif from "@/assets/eyanod-tgif.jpg";
@@ -238,107 +237,120 @@ function Nav() {
 function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.06]);
 
   return (
-    <section ref={ref} id="top" className="relative min-h-screen w-full overflow-hidden">
-      {/* Background image with parallax */}
-      <motion.div style={{ y, scale }} className="absolute inset-0">
-        <img
-          src={heroPortrait}
-          alt="Portrait of Odion Ohitanagbonta Favour"
-          className="h-full w-full object-cover object-[70%_center] md:object-[80%_center]"
-          width={1280}
-          height={1600}
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20 md:via-background/70 md:to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
-      </motion.div>
-
-      <motion.div
-        style={{ opacity }}
-        className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-32 pb-20 md:px-10"
-      >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground"
-        >
-          <span className="h-px w-10 bg-primary" />
-          Portfolio — 2026
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-6xl uppercase text-balance sm:text-7xl md:text-8xl lg:text-[9.5rem]"
-        >
-          Odion
-          <br />
-          <span className="text-primary">Ohitanagbonta</span>
-          <br />
-          Favour
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-8 max-w-2xl text-sm uppercase tracking-widest text-foreground/80 sm:text-base"
-        >
-          Marketing Manager <span className="text-primary">/</span> Content Strategist{" "}
-          <span className="text-primary">/</span> Graphic Designer{" "}
-          <span className="text-primary">/</span> UI/UX Designer (Learning)
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9 }}
-          className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg"
-        >
-          A Marketing graduate and creative professional helping brands communicate through
-          strategic marketing, content and visual design — with experience across renewable
-          energy, social media, graphic design and UI practice.
-        </motion.p>
-
+    <section
+      ref={ref}
+      id="top"
+      className="relative w-full overflow-hidden bg-background pt-28 pb-16 md:flex md:min-h-screen md:items-center md:pt-32 md:pb-24"
+    >
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-12 md:items-center md:gap-14 md:px-10">
+        {/* Portrait — shown first on mobile so it's immediately visible */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.1 }}
-          className="mt-10 flex flex-wrap gap-4"
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="order-1 md:order-2 md:col-span-5"
         >
-          <a
-            href="#work"
-            className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm uppercase tracking-widest text-primary-foreground transition-all hover:bg-primary/90"
+          <motion.div
+            style={{ y, scale }}
+            className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-border bg-card shadow-[0_30px_70px_-30px_rgba(40,20,15,0.35)] sm:aspect-[3/4]"
           >
-            View My Work
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
-          <a
-            href="/assets/Odion-Ohitanagbonta-Resume.pdf"
-            download="Odion-Ohitanagbonta-Resume.pdf"
-            className="group inline-flex items-center gap-3 border border-foreground/30 px-7 py-4 text-sm uppercase tracking-widest transition-all hover:border-foreground"
-          >
-            <Download className="h-4 w-4" /> Download Resume
-          </a>
+            <img
+              src={heroPortrait}
+              alt="Portrait of Odion Ohitanagbonta Favour"
+              className="h-full w-full object-cover object-[center_18%]"
+              width={1280}
+              height={1600}
+              fetchPriority="high"
+            />
+            {/* Light bottom fade just for a bit of grounding — image stays fully visible */}
+            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-foreground/25 to-transparent" />
+          </motion.div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 1 }}
-          className="absolute bottom-8 left-6 hidden items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground md:flex md:left-10"
-        >
-          <ArrowDown className="h-4 w-4 animate-bounce" />
-          Scroll
-        </motion.div>
-      </motion.div>
+        {/* Text content */}
+        <div className="order-2 md:order-1 md:col-span-7">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mb-6 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-muted-foreground"
+          >
+            <span className="h-px w-10 bg-primary" />
+            Portfolio — 2026
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-5xl uppercase text-balance text-foreground sm:text-6xl md:text-7xl lg:text-[5.5rem]"
+          >
+            Odion
+            <br />
+            <span className="text-primary">Ohitanagbonta</span>
+            <br />
+            Favour
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
+            className="mt-7 max-w-2xl text-sm uppercase tracking-widest text-foreground/80 sm:text-base"
+          >
+            Marketing Manager <span className="text-primary">/</span> Content Strategist{" "}
+            <span className="text-primary">/</span> Graphic Designer{" "}
+            <span className="text-primary">/</span> UI/UX Designer (Learning)
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg"
+          >
+            A Marketing graduate and creative professional helping brands communicate through
+            strategic marketing, content and visual design — with experience across renewable
+            energy, social media, graphic design and UI practice.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.75 }}
+            className="mt-10 flex flex-wrap gap-4"
+          >
+            <a
+              href="#work"
+              className="group inline-flex items-center gap-3 bg-primary px-7 py-4 text-sm uppercase tracking-widest text-primary-foreground transition-all hover:bg-primary/90"
+            >
+              View My Work
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </a>
+            <a
+              href="/assets/Odion-Ohitanagbonta-Resume.pdf"
+              download="Odion-Ohitanagbonta-Resume.pdf"
+              className="group inline-flex items-center gap-3 border border-foreground/25 px-7 py-4 text-sm uppercase tracking-widest text-foreground transition-all hover:border-foreground"
+            >
+              <Download className="h-4 w-4" /> Download Resume
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="mt-14 hidden items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground md:flex"
+          >
+            <ArrowDown className="h-4 w-4 animate-bounce" />
+            Scroll
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }
@@ -471,11 +483,11 @@ function Lightbox({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-6 backdrop-blur-sm"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-foreground/90 p-6 backdrop-blur-sm"
     >
       <button
         aria-label="Close"
-        className="absolute right-6 top-6 rounded-full border border-foreground/30 p-2 text-foreground hover:border-primary hover:text-primary"
+        className="absolute right-6 top-6 rounded-full border border-background/30 p-2 text-background hover:border-primary hover:text-primary"
         onClick={onClose}
       >
         <X className="h-5 w-5" />
