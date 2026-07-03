@@ -29,8 +29,8 @@ import eyanodWomen from "@/assets/eyanod-womens-day.jpg";
 import eyanodFathers from "@/assets/eyanod-fathers-day.jpg";
 import eyanodNewWeek from "@/assets/eyanod-newweek.jpg";
 import eyanodDemocracy from "@/assets/eyanod-democracy.jpg";
-import projectOpay from "@/assets/project-opay.jpg";
-import projectDevuno from "@/assets/eyanod-tgif.jpg";
+import projectOpay from "@/assets/project-opay1.jpg";
+import projectDevuno from "@/assets/project-devuno.jpg";
 import socialAnalyticsInstagram from "@/assets/social-analytics-instagram.jpg";
 import socialAnalyticsTiktok from "@/assets/social-analytics-tiktok.jpg";
 
@@ -73,15 +73,15 @@ const TOOLS = [
 ];
 
 const PROJECTS = [
-  {
-    title: "Renewable Energy Awareness",
-    role: "Marketing Lead",
-    description:
-      "Educational and engaging social content that simplifies renewable energy concepts through visual storytelling for Eyanod.",
-    tools: ["Canva"],
-    image: eyanodNewWeek,
-    link: null,
-  },
+  // {
+  //   title: "Renewable Energy Awareness",
+  //   role: "Marketing Lead",
+  //   description:
+  //     "Educational and engaging social content that simplifies renewable energy concepts through visual storytelling for Eyanod.",
+  //   tools: ["Canva"],
+  //   image: eyanodNewWeek,
+  //   link: null,
+  // },
   {
     title: "Democracy Day Campaign",
     role: "Marketing Lead",
@@ -98,7 +98,7 @@ const PROJECTS = [
       "Recreated selected Opay app screens in Figma to strengthen understanding of layout, spacing, hierarchy and consistency.",
     tools: ["Figma"],
     image: projectOpay,
-    link: "#",
+    link: "https://www.figma.com/proto/BtkPzLMVMUqK2mf33zIpfZ/Opay-UI?node-id=1-154&t=kLrEHTeCLpWiFIyx-1&starting-point-node-id=1%3A154",
   },
   {
     title: "Devuno — Agency Landing Page",
@@ -107,7 +107,7 @@ const PROJECTS = [
       "Clean, modern landing page UI for a concept web development agency. A study in layout, typography, spacing and color.",
     tools: ["Figma"],
     image: projectDevuno,
-    link: "#",
+    link: "https://www.figma.com/proto/cHSLjQiiwFLRBYzRJgDc63/devuno?node-id=16-4&t=d3dEZB3A4p8dbuJF-1",
   },
 ];
 
@@ -868,9 +868,9 @@ function Contact() {
               <li className="flex items-start gap-4">
                 <Phone className="mt-1 h-5 w-5 text-primary" />
                 <div>
-                  <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Phone / WhatsApp</p>
-                  <a href="tel:+2349037186913" className="mt-1 block text-lg hover:text-primary">
-                    +234 903 718 6913
+                  <p className="text-[11px] uppercase tracking-widest text-muted-foreground">Phone Number</p>
+                  <a href="tel:+2348122628606" className="mt-1 block text-lg hover:text-primary">
+                    +234 812 262 8606
                   </a>
                 </div>
               </li>
